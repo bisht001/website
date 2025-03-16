@@ -24,7 +24,6 @@ nav{
     z-index: 10;
     background-color:rgba(255, 255, 255, 0.701);
     backdrop-filter: blur(-10px);
-    border:2px solid white;
 }
 
 nav .logo{
@@ -58,10 +57,11 @@ header nav .sliding_menu{
     overflow: hidden;
     top:80px;
     transition: height 1s ease-in-out;
+    border-bottom: 2px solid white;
 }
 
 header nav .sliding_menu ul{
-    padding: 30px 0px 0px 5vw;
+    padding: 36px 0px 0px 5vw;
     list-style-type: none;
     gap:25px;
     display: flex;
@@ -76,4 +76,7 @@ header nav .navbar .sliding_menu ul li a{
 .hidden{
     height: calc(100vh - 80px) !important;
 }
+
+
+
 
