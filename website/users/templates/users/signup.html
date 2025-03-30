@@ -1,0 +1,65 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% tailwind_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/src/styles.css' %}">
+</head>
+<body>
+    <main class="signup_page flex justify-center items-center h-screen w-screen">
+        <div class="signup_form bg-[#005450] text-white h-[93vh] w-[65vh] rounded-xl text-center">
+            <section class="upper m-6">
+                <p class="m-auto text-3xl font-bold tracking-[2px]">Signup</p>
+            </section>
+
+            <section class="mid">
+                <section class="mid_upper flex flex-col text-xl w-[50vh] m-auto">
+                    <input type="text" placeholder="Your name" class="input_bar">
+                    <input type="text" placeholder="Email Address"
+                        class="bg-transparent border-0 border-b border-gray-400 text-center p-4 tracking-[2px] focus:border-blue-400 focus:outline-none focus:ring-0">
+                    <input type="text" placeholder="Password"
+                        class="bg-transparent border-0 border-b border-gray-400 text-center p-4 tracking-[2px] focus:border-blue-400 focus:outline-none focus:ring-0">
+                    <button type="submit"
+                        class=" bg-white text-black rounded-3xl h-12 w-80 m-auto mt-10 cursor-pointer font-bold">Sign Up</button>
+                </section>
+
+                <section class="divider mt-10 w-96 m-auto relative">
+                    <hr >
+                    <p class="absolute top-[-14.5px] left-[43%] bg-[#005450] left-38 w-16">or</p>
+                </section>
+
+                <section class="mid_lower">
+
+                    <a href="#"
+                        class="border w-80 rounded-3xl h-12 m-auto mt-10 flex justify-center items-center ">
+                        <img src="{% static 'users/logo/apple.svg' %}" class="h-8 mr-5"> Sign in with Apple
+                    </a>
+
+                    <a  href="#"
+                        class="border w-80 rounded-3xl h-12 m-auto mt-5 flex justify-center items-center">
+                        <img src="{% static 'users/logo/google.svg' %}" class="h-8 mr-5"> Sign in with Google
+                    </a>
+                </section>
+            </section>
+
+            <section class="lower">
+                <div class="policy mb-6">
+                    <p class="w-96 m-auto mt-6 text-gray-300">
+                        By creating an account, you agree and accept our <a href="#" class="underline hover:text-white">Terms</a> and <a
+                            href="#" class="underline hover:text-white">Privacy Policy</a>.
+                    </p>
+                </div>
+
+                <hr class="border-gray-400">
+                <div class="login_page mt-4 text-base tracking-[1px]">
+                    <p>Already have an account? <a href="{% url 'login_page' %}" class="underline text-gray-300 hover:text-white">Log in</a>.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
