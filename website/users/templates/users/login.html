@@ -3,40 +3,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
     {% tailwind_css %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'users/src/styles.css' %}">
 </head>
 <body>
-    <main class="login_page h-screen w-screen flex justify-center items-center text-white">
-        <div class="login_form bg-[#005450] h-[75vh] w-[55vh] rounded-xl text-center">
-            <section class="upper text-3xl font-bold tracking-[2px] my-6">
+    <main class="login_page main">
+        <form class="login_form bg-[#005450] h-[75vh] w-[55vh] rounded-xl text-center" method="POST" action="{% url 'login_func' %}">  {% csrf_token %}
+            <section class="upper heading">
                 <p>login</p>
             </section>
 
             <section class="mid">
-                <div class="mid_upper flex flex-col items-center">
-                    <input type="text" placeholder="Username or Email" class="text-center bg-transparent border-0 border-b border-gray-400 w-80 text-xl py-2 focus:outline-none focus:border-blue-500 focus:ring-0">
-                    <input type="password" placeholder="Password" class="text-center bg-transparent border-0 border-b border-gray-400 w-80 text-xl py-4 focus:outline-none focus:border-blue-500 focus:ring-0">
-                    <button type="submit" class="border w-72 rounded-3xl h-12 bg-white text-black cursor-pointer mt-12 text-xl font-bold">Sign in</button>
+                <div class="mid_upper flex flex-col w-[42vh] text-xl m-auto ">
+                    <input type="text" placeholder="Username" class="input_bar" name="username">
+                    <input type="password" placeholder="Password" class="input_bar" name="password">
+                    <button type="submit" class="btn w-[280px]">log in</button>
                 </div>
 
+                <section>
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </section>
+
                 <div class="divider mt-9 relative">
-                    <hr class="w-80 m-auto">
+                    <hr class="w-[42vh] m-auto">
                     <p class="absolute top-[-14.5px] left-[42%] bg-[#005450] w-16">or</p>
                 </div>
 
                 <div class="mid_lower">
-                    <a href="#" class="border flex w-72 m-auto justify-center items-center rounded-3xl mt-8 h-12"><img src="{% static 'users/logo/apple.svg' %}" class="h-7 mr-4">Sign in with Apple</a>
-                    <a href="#" class="border flex w-72 m-auto justify-center items-center rounded-3xl my-6 h-12"><img src="{% static 'users/logo/google.svg' %}" class="h-7 mr-4">Sign in with Google</a>
+                    <a href="#" class="links w-[280px] mt-10">
+                        <img src="{% static 'users/logo/apple.svg' %}" class="h-7 mr-4">Sign in with Apple
+                    </a>
+
+                    <a href="#" class="links w-[280px]">
+                        <img src="{% static 'users/logo/google.svg' %}" class="h-7 mr-4">Sign in with Google
+                    </a>
                 </div>
             </section>
 
-            <section class="lower">
-                <p>Don't have an account? <a href="{% url 'signup_page' %}" class="underline">Sign up</a></p>
+            <section class="lower mt-8">
+                <p>Don't have an account? 
+                    <a href="{% url 'signup_page' %}" class="underline ">Sign up</a>
+                </p>
             </section>
-        </div>
+        </form>
     </main>
 </body>
 </html>

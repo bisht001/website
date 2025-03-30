@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+
+    .main{
+        @apply h-screen w-screen flex justify-center items-center text-white;
+    }
+
+    .heading {
+        @apply m-auto text-3xl font-bold tracking-[2px] m-5;
+    }
+
+    .input_bar {
+        @apply bg-transparent border-0 border-b border-gray-400 text-center p-4 tracking-[2px] focus:border-blue-400 focus:outline-none focus:ring-0;
+    }
+
+    .btn {
+        @apply bg-white text-black rounded-3xl h-12 w-80 m-auto mt-10 cursor-pointer font-bold border text-xl;
+    }
+
+    .links{
+        @apply border flex w-80 m-auto justify-center items-center rounded-3xl mt-4 h-12;
+    }
+}
+
+@tailwind utilities;
