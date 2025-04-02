@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 18 18" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="5" x2="18" y2="5" stroke="black" stroke-width="2" stroke-linecap="square"/>
+    <line x1="0" y1="12" x2="18" y2="12" stroke="black" stroke-width="2" stroke-linecap="square"/>
+</svg>

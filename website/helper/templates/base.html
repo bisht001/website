@@ -1,0 +1,181 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %} 
+    {% load static %}
+  </head>
+
+  <body class="overflow-x-hidden">
+    <header>
+      <nav
+        class="h-20 flex items-center justify-between relative z-10 bg-white/80 backdrop-blur-xl px-14"
+      >
+        <section class="logo text-3xl cursor-pointer">
+          <h1>Sam.</h1>
+        </section>
+
+        <section class="navbar_menu">
+          <section class="seen_navbar">
+            <ul class="flex ml-[40vw] gap-20">
+              <li>
+                <a href="#" id="home">Home</a>
+              </li>
+
+              <li>
+                <a href="#" id="product">Product</a>
+              </li>
+
+              <li>
+                <a href="#" id="search">Search</a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="hidden_search navbar_classes duration-700">
+            <div class="search_bar flex justify-center relative top-14">
+              <input
+                type="text"
+                placeholder="Search"
+                class="h-12 w-[35vw] pl-[2.5%] rounded-3xl tracking-wider text-xl"
+              />
+              <img
+                src="{% static 'core/icon/search.svg' %}"
+                class="h-6 absolute right-[34.5%] top-3 cursor-pointer"
+                id="search_icon"
+              />
+            </div>
+          </section>
+
+          <section class="hidden_product navbar_classes">
+            <ul
+              class="product_list grid justify-center grid-cols-[250px_300px_320px] grid-rows-[300px_300px] h-screen text-center mt-5"
+            >
+              <li class="ml-20">
+                <img
+                  src="{% static 'core/image/img_4.jpg' %}"
+                  class="navbar_product_classes"
+                />
+                <figcaption>Lamp</figcaption>
+              </li>
+
+              <li class="ml-20">
+                <img
+                  src="{% static 'core/image/img_5.jpg' %}"
+                  class="navbar_product_classes"
+                />
+                <figcaption>Pot</figcaption>
+              </li>
+
+              <li class="-ml-5">
+                <img
+                  src="{% static 'core/image/clothes/img_1.jpeg' %}"
+                  class="navbar_product_classes"
+                />
+                <figcaption>Clothes</figcaption>
+              </li>
+
+              <li class="item-4 col-end-3 col-start-1 -ml-6">
+                <img
+                  src="{% static 'core/image/watch/img_4.jpg' %}"
+                  class="navbar_product_classes"
+                />
+                <figcaption>Watch</figcaption>
+              </li>
+
+              <li class="item-5 col-start-3 col-end-4 -ml-28">
+                <img
+                  src="{% static 'core/image/headphone/img_7.avif' %}"
+                  class="navbar_product_classes"
+                />
+                <figcaption>Headphone</figcaption>
+              </li>
+            </ul>
+          </section>
+
+          <section class="hidden_navbar navbar_classes">
+            <ul class="text-3xl/loose px-14 py-16">
+              <li>
+                <a href="#">Men's Design</a>
+              </li>
+
+              <li>
+                <a href="#">Women's Design</a>
+              </li>
+
+              <li>
+                <a href="#">Watch's</a>
+              </li>
+
+              <li>
+                <a href="#">About us</a>
+              </li>
+
+              <li>
+                <a href="#">Wishlist</a>
+              </li>
+
+              <li>
+                <a href="{% url 'signup_page' %}">Sign up</a>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="ham_burger">
+          <img
+            src="{% static 'core/icon/menu.svg' %}"
+            id="menu"
+            class="cursor-pointer"
+          />
+          <img
+            src="{% static 'core/icon/cross.svg' %}"
+            id="cross"
+            class="hidden cursor-pointer"
+          />
+        </section>
+      </nav>
+    </header>
+
+    {% block main %} {% endblock %}
+    
+
+    <footer
+      class="bg-[#005450] h-[35vh] text-white px-[10vh] py-[5vh] relative"
+    >
+      <section class="address">
+        <h3>Steven</h3>
+        <p>Haldwani ,Uttarakhand ,India</p>
+        <p>+91 9876XXXXXX</p>
+        <p>bishtrohit627@gmail.com</p>
+        <ul class="links absolute left-[90vh] border-none gap-12 top-10 flex">
+          <li>
+            <img src="{% static 'core/icon/facebook.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/instagram.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/pinterest.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/x.png' %}" />
+          </li>
+        </ul>
+      </section>
+      <hr class="my-10" />
+      <p>© CASA-SEVEN 2024 - ALL REGISTERED</p>
+    </footer>
+
+    {% block script %}
+      <script src="{% static 'core/js/core.js' %}?v-5"></script>
+    {% endblock %}
+  </body>
+</html>

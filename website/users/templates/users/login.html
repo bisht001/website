@@ -6,38 +6,39 @@
     <title>Login</title>
     {% tailwind_css %}
     {% load static %}
+    {% load socialaccount %}
 </head>
 <body>
-    <main class="login_page main">
+    <main class="login_page login_and_signup_main">
         <form class="login_form bg-[#005450] h-[75vh] w-[55vh] rounded-xl text-center" method="POST" action="{% url 'login_func' %}">  {% csrf_token %}
-            <section class="upper heading">
+            <section class="upper login_and_signup_heading">
                 <p>login</p>
             </section>
 
             <section class="mid">
                 <div class="mid_upper flex flex-col w-[42vh] text-xl m-auto ">
-                    <input type="text" placeholder="Username" class="input_bar" name="username">
-                    <input type="password" placeholder="Password" class="input_bar" name="password">
-                    <button type="submit" class="btn w-[280px]">log in</button>
+                    <input type="text" placeholder="Username" class="login_and_signup_input_bar" name="username" required>
+                    <input type="password" placeholder="Password" class="login_and_signup_input_bar" name="password" required>
+                    <button type="submit" class="login_and_signup_btn w-[280px]">log in</button>
                 </div>
 
-                <section>
+                <section class="text-red-600 py-3 h-8"> 
                     {% for message in messages %}
                         <p>{{ message }}</p>
                     {% endfor %}
                 </section>
 
-                <div class="divider mt-9 relative">
+                <div class="divider mt-5 relative">
                     <hr class="w-[42vh] m-auto">
                     <p class="absolute top-[-14.5px] left-[42%] bg-[#005450] w-16">or</p>
                 </div>
 
                 <div class="mid_lower">
-                    <a href="#" class="links w-[280px] mt-10">
-                        <img src="{% static 'users/logo/apple.svg' %}" class="h-7 mr-4">Sign in with Apple
+                    <a href="{% provider_login_url 'github' %}" class="login_and_signup_links w-[280px] mt-8">
+                        <img src="{% static 'users/logo/github.svg' %}" class="h-7 mr-4">Sign in with Github
                     </a>
 
-                    <a href="#" class="links w-[280px]">
+                    <a href="{% provider_login_url 'google' %}" class="login_and_signup_links w-[280px]">
                         <img src="{% static 'users/logo/google.svg' %}" class="h-7 mr-4">Sign in with Google
                     </a>
                 </div>

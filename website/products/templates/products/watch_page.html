@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% load static %} 
+
+{% block title %}
+    {{ watch.watch_name }}
+{% endblock %}
+
+{% block main %}
+<main class="h-[100vh] m-[10vh] bg-gray-200 shadow-gray-700 shadow-2xl mt-5">
+  <section class="header text-3xl font-semibold tracking-[5vh] h-24 flex items-center justify-center">
+    IN STORE
+  </section>
+
+  <section class="product_details flex">
+    <section class="left w-[45vw] pt-4">
+      <section class="slider relative flex justify-center items-center h-96 p-4">
+        {% if brand_name|lower == 'rolex'%}
+        <img src="{{ watch.watch_image_1.url }}" class="h-[55vh] scale-[1.35] -mt-20" />
+        {% endif %}
+      
+        {% if brand_name|lower == 'hublot'%}
+        <img src="{{ watch.watch_image_1.url }}" class="h-[55vh] scale-[1.1] -mt-16 {% if watch.watch_full_name == 'Big Bang Integrated Black Magic'%} scale-[1] {% endif %}"/>
+        {% endif %}
+      </section>
+
+      <section class="description text-center">
+        <section class="name text-xl tracking-[10px] underline underline-offset-8{% if watch.watch_full_name == 'Big Bang Chronograph Orlinski Black Magic'%} tracking-[8px] {% endif %}">
+          {{ watch.watch_name }}
+        </section>
+
+        <section class="explanation p-5 mx-9 tracking-widest leading-[45px] mt-5 bg-white">
+          {{ watch.watch_desc }}
+        </section>
+      </section>
+    </section>
+
+    <section class="right w-[45vw] pl-[10vh] pt-10">
+      <section class="addToWishlist"></section>
+      <section class="name text-3xl leading-10">
+        {{ watch.watch_full_name }}
+      </section>
+      <section class="category italic">Men's collections</section>
+
+      <section class="Model_case font-semibold text-xl pt-8">
+        Model case
+        <p class="opacity-50 font-normal">
+          {{ watch.watch_model_case }}
+        </p>
+      </section>
+
+      <section class="Material font-semibold text-xl pt-8">
+        Material
+        <p class="opacity-50 font-normal">
+          {{ watch.watch_material }}
+        </p>
+      </section>
+
+      <section class="Price font-semibold text-xl pt-8">
+        Price
+        <p class="price text-xl">
+          {{ watch.watch_price }}
+        </p>
+      </section>
+
+      <section class="button">
+        <select class="h-14 w-48 mr-10 mt-10 border-2 border-gray-500 text-center appearance-none">
+          <option hidden>DIAL SIZE</option>
+          <option value="38mm">38 mm</option>
+          <option value="41mm">41 mm</option>
+          <option value="42mm">42 mm</option>
+          <option value="44mm">44 mm</option>
+        </select>
+        <button class="border-2 border-gray-500 bg-gray-500 text-white h-14 w-48 tracking-widest font-bold">
+          ADD TO CART
+        </button>
+      </section>
+
+      <section class="quantity text-[14px] opacity-80 text-center w-48">
+        75 REMAINING
+      </section>
+
+      <section class="Price font-semibold text-xl pt-12">
+        REFERENCE
+        <p class="price text-xl opacity-40">
+          {{ watch.watch_reference_no }}
+        </p>
+      </section>
+    </section>
+  </section>
+</main>
+{% endblock %}

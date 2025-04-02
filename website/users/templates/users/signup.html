@@ -6,43 +6,44 @@
     <title>Signup</title>
     {% tailwind_css %}
     {% load static %}
+    {% load socialaccount %}
 </head>
 <body>
 
-    <main class="signup_page main">
+    <main class="signup_page login_and_signup_main">
         <form class="signup_form bg-[#005450] h-[93vh] w-[65vh] rounded-xl text-center" method="POST" action="{% url 'signup_func'%}"> {% csrf_token %}
-            <section class="upper heading">
+            <section class="upper login_and_signup_heading">
                 <p>Signup</p>
             </section>
 
             <section class="mid">
                 <section class="mid_upper flex flex-col text-xl w-[50vh] m-auto">
-                    <input type="text" placeholder="Your name" class="input_bar" name="username">
-                    <input type="text" placeholder="Email Address" class="input_bar" name="email">
-                    <input type="text" placeholder="Password" class="input_bar" name="password">
+                    <input type="text" placeholder="Your name" class="login_and_signup_input_bar" name="username" required>
+                    <input type="text" placeholder="Email Address" class="login_and_signup_input_bar" name="email" required>
+                    <input type="text" placeholder="Password" class="login_and_signup_input_bar" name="password" required>
                     <button type="submit"
-                        class="btn">Sign Up</button>
+                        class="login_and_signup_btn">Sign Up</button>
                 </section>
 
-                <section class="text-red">
+                <section class="text-red-600 h-6 pt-3 font-semibold">
                     {% for message in messages %}
                         <p>{{ message }}</p>
                     {% endfor %}
                 </section>
 
-                <section class="divider mt-10  m-auto relative w-[50vh]">
+                <section class="divider mt-8  m-auto relative w-[50vh]">
                     <hr >
                     <p class="absolute top-[-14.5px] left-[42%] bg-[#005450] left-38 w-16">or</p>
                 </section>
 
                 <section class="mid_lower">
-                    <a href="#"
-                        class="links mt-10">
-                        <img src="{% static 'users/logo/apple.svg' %}" class="h-8 mr-5"> Sign in with Apple
+                    <a href="{% provider_login_url 'github' %}"
+                        class="login_and_signup_links mt-8">
+                        <img src="{% static 'users/logo/github.svg' %}" class="h-8 mr-5"> Sign in with Github
                     </a>
 
-                    <a  href="#"
-                        class="links mt-5 ">
+                    <a  href="{% provider_login_url 'google' %}"
+                        class="login_and_signup_links mt-5 ">
                         <img src="{% static 'users/logo/google.svg' %}" class="h-8 mr-5"> Sign in with Google
                     </a>
                 </section>

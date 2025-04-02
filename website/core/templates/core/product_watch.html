@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+{%load static%} 
+
+
+{% block title %} 
+Watches
+{% endblock %} 
+
+
+{% block main %}
+<main>
+  <section class="rolex mx-[8vh] pb-10">
+    <section
+      class="main_heading h-32 text-5xl flex justify-center items-center font-semibold"
+    >
+      Find your Rolex
+    </section>
+
+    <section class="watch_list">
+      <h1 class="heading text-4xl">Rolex</h1>
+
+      <section class="product_list flex flex-wrap gap-14 ml-2 mt-5 justify-start">
+        {% for rolex in rolex_collection %}
+        <a href="{% url 'watch' rolex.brand rolex.id %}" class="product w-[40vh] relative ">
+          <svg
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute h-9 top-3 right-4 cursor-pointer d add_to_wishlist z-10"
+          >
+          <path
+          fill="none"
+          stroke="gray"
+          stroke-linecap="round"
+          troke-linejoin="round"
+          d="m43,17.0766c0-5.6539-4.5835-10.2373-10.2374-10.2373-3.7223,0-6.9708,1.9932-8.7626,4.964-1.7919-2.9708-5.0403-4.964-8.7626-4.964-5.6539,0-10.2373,4.5834-10.2373,10.2373,0,1.2925.2496,2.524.6866,3.6627,3.3851,9.7368,18.3134,20.4215,18.3134,20.4215,0,0,14.9282-10.6847,18.3134-20.4215.437-1.1386.6867-2.3702.6867-3.6627Z"
+          />
+          </svg>
+          <div class="img border-4 relative overflow-hidden h-[65vh] rounded-xl">
+            <img src="{{rolex.rolex_image.url}}" class="watch_photo h-[95vh] w-[55vh] scale-[1.2] -mt-[20vh]" >
+          </div>
+          <figcaption class="pl-4 mt-4 text-lg">
+            <h1 class="text-2xl">{{ rolex.rolex_name }}</h1>
+            <p>{{ rolex.rolex_price }}</p>
+          </figcaption>
+        </a>
+        {% endfor %}
+      </section>
+    </section>
+  </section>
+
+  <section class="Hublot mx-[8vh] pb-10">
+    <section
+      class="main_heading h-32 text-5xl flex justify-center items-center font-semibold"
+    >
+      Find your Hublot
+    </section>
+
+    <section class="watch_list">
+      <h1 class="heading text-4xl">Hublot</h1>
+
+      <section class="product_list flex flex-wrap gap-14 ml-2 mt-5 justify-start">
+        {% for hublot in hublot_collection %}
+        <a href="{% url 'watch' hublot.brand hublot.id %}" class="product w-[40vh] relative">
+          <svg
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute h-9 top-3 right-4 cursor-pointer d add_to_wishlist z-10"
+          >
+          <path
+          fill="none"
+          stroke="gray"
+          stroke-linecap="round"
+          troke-linejoin="round"
+          d="m43,17.0766c0-5.6539-4.5835-10.2373-10.2374-10.2373-3.7223,0-6.9708,1.9932-8.7626,4.964-1.7919-2.9708-5.0403-4.964-8.7626-4.964-5.6539,0-10.2373,4.5834-10.2373,10.2373,0,1.2925.2496,2.524.6866,3.6627,3.3851,9.7368,18.3134,20.4215,18.3134,20.4215,0,0,14.9282-10.6847,18.3134-20.4215.437-1.1386.6867-2.3702.6867-3.6627Z"
+          />
+          </svg>
+          <div class="img">
+            <img src="{{hublot.hublot_image.url}}" class="watch_photo h-[60vh] p-7 {% if hublot.hublot_name == 'Big Bang Integrated Black Magic' %} p-9 {% endif %}" >
+          </div>
+          <figcaption class="pl-4 mt-4 text-lg">
+            <h1 class="text-2xl">{{ hublot.hublot_name }}</h1>
+            <p>{{ hublot.hublot_price }}</p>
+          </figcaption>
+        </a>
+        {% endfor %}
+      </section>
+    </section>
+  </section>
+
+
+
+</main>
+{% endblock %}

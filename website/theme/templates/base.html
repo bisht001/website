@@ -1,19 +1,45 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-	</head>
+  <head>
+    <title>Home page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %} {% load static %}
+  </head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-			</section>
-		</div>
-	</body>
+  <body class="overflow-x-hidden">
+    "hi" {% block main%} {% endblock %}
+
+    <footer
+      class="bg-[#005450] h-[35vh] text-white px-[10vh] py-[5vh] relative"
+    >
+      <section class="address">
+        <h3>Steven</h3>
+        <p>Haldwani ,Uttarakhand ,India</p>
+        <p>+91 9876XXXXXX</p>
+        <p>bishtrohit627@gmail.com</p>
+        <ul class="links absolute left-[90vh] border-none gap-12 top-10">
+          <li>
+            <img src="{% static 'core/icon/facebook.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/instagram.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/pinterest.png' %}" />
+          </li>
+
+          <li>
+            <img src="{% static 'core/icon/x.png' %}" />
+          </li>
+        </ul>
+      </section>
+      <hr class="my-10" />
+      <p>© CASA-SEVEN 2024 - ALL REGISTERED</p>
+    </footer>
+  </body>
 </html>
