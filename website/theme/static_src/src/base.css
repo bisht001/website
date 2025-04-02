@@ -1,5 +1,125 @@
 @tailwind base;
 @tailwind components;
 
-@import "./user_style.css";
+@layer components {
+
+    /* Login and Signup page */
+
+    .login_and_signup_main{
+        @apply h-screen w-screen flex justify-center items-center text-white;
+    }
+
+    .login_and_signup_heading {
+        @apply m-auto text-3xl font-bold tracking-[2px] m-5;
+    }
+
+    .login_and_signup_input_bar {
+        @apply bg-transparent border-0 border-b border-gray-400 text-center p-4 tracking-[2px] focus:border-blue-400 focus:outline-none focus:ring-0;
+    }
+
+    .login_and_signup_btn {
+        @apply bg-white text-black rounded-3xl h-12 w-80 m-auto mt-10 cursor-pointer font-bold border text-xl;
+    }
+
+    .login_and_signup_links{
+        @apply border flex w-80 m-auto justify-center items-center rounded-3xl mt-4 h-12;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Navbar */
+
+    .navbar_hidden_search_logic{
+        @apply h-40 !important;
+    }
+
+    .navbar_hidden_navbar_logic,
+    .navbar_hidden_product_logic{
+        @apply h-screen-minus-80 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* Landing page */
+
+    .navbar_classes{
+        @apply absolute top-20 left-0 bg-white/80 backdrop-blur-xl overflow-hidden w-screen transition-all h-0 duration-1000;
+    }
+
+    .slider_classes{
+        @apply absolute top-0 left-0 h-screen w-screen;
+    }
+
+    .navbar_product_classes{
+        @apply h-[250px] rounded-2xl cursor-pointer m-auto;
+    }
+
+    .product_header{
+        @apply mx-[5vh] h-[30vh] text-white relative rounded-3xl;
+    }
+
+    .see_all{
+        @apply underline absolute text-xl bottom-[10vh] left-[43%] underline-offset-8;
+    }
+
+    .cloth_photo_1{
+        @apply bg-gray-200 rounded-xl cursor-pointer object-cover h-[65vh] hover:opacity-0 transition-opacity duration-300;
+    }
+
+    .cloth_photo_2{
+        @apply bg-gray-200 rounded-xl cursor-pointer object-cover h-[65vh] absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-300;
+    }
+
+    .watch_photo{
+        @apply bg-gray-200 rounded-xl cursor-pointer w-full h-[75vh] object-cover;
+    }
+
+
+    /* Slider Animation Classes */
+    .item {
+        @apply hidden;
+    }
+
+    .active, .prev {
+        @apply block;
+    }
+
+    .active {
+        @apply z-[2];
+    }
+
+    .active .main_content {
+        @apply animate-contentSeen;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+
 @tailwind utilities;

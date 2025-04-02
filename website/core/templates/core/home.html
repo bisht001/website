@@ -1,0 +1,354 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% tailwind_css %}
+    {% load static %}
+</head>
+
+<body class="overflow-x-hidden">
+    <header>
+        <nav class="h-20 flex items-center justify-between relative z-10 bg-white/80 backdrop-blur-xl px-14">
+            <section class="logo text-3xl cursor-pointer">
+                <h1>Sam.</h1>
+            </section>
+
+            <section class="navbar_menu">
+                <section class="seen_navbar ">
+                    <ul class="flex ml-[40vw] gap-20">
+                        <li>
+                            <a href="#" id="home">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="product">Product</a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="search">Search</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="hidden_search navbar_classes duration-700">
+                    <div class="search_bar flex justify-center relative top-14">
+                        <input type="text" placeholder="Search" class="h-12 w-[35vw] pl-[2.5%] rounded-3xl tracking-wider text-xl">
+                        <img src="{% static 'core/icon/search.svg' %}" class="h-6 absolute right-[34.5%] top-3 cursor-pointer" id="search_icon">
+                    </div>
+                </section>
+
+                <section class="hidden_product navbar_classes">
+                    <ul class="product_list grid justify-center grid-cols-[250px_300px_320px] grid-rows-[300px_300px] h-screen text-center mt-5">
+                        <li class="ml-20">
+                            <img src="{% static 'core/image/img_4.jpg' %}" class="navbar_product_classes">
+                            <figcaption>Lamp</figcaption>
+                        </li>
+
+
+                        <li class="ml-20">
+                            <img src="{% static 'core/image/img_5.jpg' %}" class="navbar_product_classes">
+                            <figcaption>Pot</figcaption>
+                        </li>
+
+                        <li class="-ml-5">
+                            <img src="{% static 'core/image/clothes/img_1.jpeg' %}" class="navbar_product_classes">
+                            <figcaption>Clothes</figcaption>
+                        </li>
+
+                        <li class="item-4 col-end-3 col-start-1 -ml-6">
+                            <img src="{% static 'core/image/watch/img_4.jpg' %}" class="navbar_product_classes">
+                            <figcaption>Watch</figcaption>
+                        </li>
+
+                        <li class="item-5 col-start-3 col-end-4 -ml-28">
+                            <img src="{% static 'core/image/headphone/img_7.avif' %}" class="navbar_product_classes">
+                            <figcaption>Headphone</figcaption>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="hidden_navbar navbar_classes">
+                    <ul class="text-3xl/loose px-14 py-16">
+                        <li>
+                            <a href="#">Men's Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Women's Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Watch's</a>
+                        </li>
+
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'signup_page' %}">Sign up</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="ham_burger">
+                <img src="{% static 'core/icon/menu.svg' %}" id="menu" class="cursor-pointer">
+                <img src="{% static 'core/icon/cross.svg' %}" id="cross" class="hidden cursor-pointer">
+            </section>
+        </nav>
+    </header>
+
+    <main class="landing_page">
+        <section class="slider_container relative h-screen w-screen -top-20 overflow-hidden">
+            <section class="slider slider_classes">
+                <section class="list slider_classes">
+                    <section class="item one slider_classes">
+                        <section class="main_content slider_classes bg-[antiquewhite]">
+                            <section class="content absolute top-20 left-[50%] h-[calc(100vh - 80px)] pl-16 py-10">
+                                <h1 class="heading text-5xl w-[70%] pb-5 font-medium ml-0">Experience Pure Sound Like Never Before</h1>
+                                <p class="description w-[90%] pb-5 text-lg">Immerse yourself in crystal-clear sound with our premium wireless
+                                    headphones, featuring deep bass and advanced noise cancellation. Enjoy up to 40
+                                    hours of battery life with seamless Bluetooth connectivity for uninterrupted music
+                                    and calls. Shop now and get 10% OFF with code SOUND10—limited time only!</p>
+                                <button class="shop_now border border-black h-16 w-48 bg-transparent cursor-pointer z-[1] my-20">Shop Now</button>
+                            </section>
+
+                            <figure>
+                                <img src="{% static 'core/image/headphone/img_1.png' %}" class="select-none h-[80%] absolute top-20 flex justify-center items-center pointer-events-none">
+                            </figure>
+
+                        </section>
+                    </section>
+
+
+                    <section class="item two active slider_classes">
+                        <section class="main_content relative h-screen w-screen bg-gray-400">
+                            <section class="content pt-40 pl-40 absolute">
+                                <h1 class="heading text-5xl font-normal ml-0">New Clothing Collection</h1>
+                                <p class="description mt-10">The new collecting of clothing from the best branch this year.
+                                </p>
+                                <button class="shop_now border border-black h-16 w-48 bg-transparent cursor-pointer z-[1] my-20 ">Explore</button>
+                            </section>
+                            <figure class="absolute left-[45%] h-screen w-screen top-32">
+                                <div class="img_1"><img src="{% static 'core/image/clothes/img_2.png' %}" class="select-none h-[55vh] bg-white absolute left-40 pointer-events-none"></div>
+                                <div class="img_2"><img src="{% static 'core/image/clothes/img_4.png' %}" class="select-none h-[65vh] bg-white absolute left-1/4 pointer-events-none top-28"></div>
+                            </figure>
+                        </section>
+                    </section>
+
+
+                    <section class="item three absolute top-0 left-0 w-screen h-screen text-center">
+                        <section class="main_content bg-white">
+                            <section class="content relative">
+                                <h1 class="name text-5xl absolute top-20 left-[40%]">Timeless Elegance</h1>
+                                <button class="shop_now absolute top-[80vh] right-[10%] border border-black h-16 w-48">Shop Now</button>
+                            </section>
+                            <figure class="w-screen h-screen relative">
+                                <img src="{% static 'core/image/world.png' %}" class="select-none img_1 absolute w-screen -top-40 bottom-0 left-0 opacity-20 pointer-events-none">
+                                <img src="{% static 'core/image/watch/img_3.png' %}" class="select-none img_2 absolute left-[58%] top-[20vh] pointer-events-none h-[83%] rotate-[10deg]">
+                                <img src="{% static 'core/image/watch/img_2.png' %}" class="select-none img_3 absolute h-[90%] left-[36%] top-[12vh] pointer-events-none z-[1]">
+                                <img src="{% static 'core/image/watch/img_5.png' %}" class="select-none img_4 absolute left-[20%] top-[20vh] pointer-events-none h-[80%] rotate-[-10deg]">
+                            </figure>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <section class="headphone h-[130vh] relative">
+            <section class="upper_part product_header bg-red-400">
+                <figure>
+                    <img src="{% static 'core/image/headphone/img_5.png' %}" class="h-72 brightness-150 absolute -top-[8.2vh] left-[3vw] pointer-events-none select-none">
+                    <figcaption class="text-6xl pt-[5vh] pl-[19vw] w-[50%]">Perfect Fit, Powerful Sound</figcaption>
+                </figure>
+
+                <section class="content absolute right-[3vw] top-[3vh] w-[30%]">
+                    <p class="description">Feacturing Active Noise Cancelling that gives you the space to create with
+                        fully immersive sound.</p>
+                    <div class="feacture pt-[3vh] leading-[5vh]">
+                        <p class="flex items-center gap-[3vh]"><img src="{% static 'core/image/sound.png' %}" class="h-7">Powerful, balanced sound</p>
+                        <p class="flex items-center gap-[3vh]"><img src="{% static 'core/image/ear.png' %}" class="h-7 ">Optimal comfort</p>
+                        <p class="flex pl-1.5 gap-[3.2vh] items-center"> <span class="text-3xl select-none pointer-events-none text-black -ml-1">⦸</span> Noise cancelling</p>
+                    </div>
+                </section>
+            </section>
+            <section class="lower mx-[20vh]">
+                <h1 class="text-5xl mt-[5vh] text-center">Our New Product</h1>
+                <div class="list flex mt-[5vh] justify-around">
+                    <figure class="product_1 w-[32%]">
+                        <img src="{% static 'core/image/headphone/img_8.png' %}" class="bg-gray-100 rounded-xl cursor-pointer">
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl"> Apple AirPods Max</h1>
+                            <p>$ 549.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_2 w-[32%]">
+                        <img src="{% static 'core/image/headphone/img_2.jpg' %}" class="bg-gray-100 rounded-xl cursor-pointer">
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-xl">JBL Tune 770NC</h1>
+                            <p>$ 159.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_3 w-[32%]">
+                        <img src="{% static 'core/image/headphone/img_3.jpg' %}" class="bg-gray-100 rounded-xl cursor-pointer">
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">JBL Tune 510 BT</h1>
+                            <p>$ 109.00</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <a href="#" class="see_all">See all Headphones </a>
+            </section>
+
+        </section>
+
+        <section class="watch h-[155vh] relative">
+            <section class="upper_part product_header bg-blue-400">
+                <figure>
+                    <img src="{% static 'core/image/watch/img_6.png' %}" class="h-[45vh] brightness-150 absolute -top-[10vh] left-[69vw] pointer-events-none select-none z-2">
+                    <figcaption class="absolute top-0 left-[24vw] text-6xl pt-[5vh] pl-[20vw] w-[60%]">Stylish, durable, precise, timeless.</figcaption>
+                </figure>
+
+                <section class="content absolute left-[6vw] top-[5vh] w-[30%] leading-[3vh]">
+                    <p class="description">Featuring precision timekeeping, durable craftsmanship, and a sleek design
+                        that complements every moment.</p>
+                    <div class="feacture pt-3 leading-9 pl-[1vh]">
+                        <p>long battery life</p>
+                        <p>water-resistant</p>
+                        <p>Luxury Automatic</p>
+                    </div>
+                    <button class="shop_now absolute bottom-[2vh] right-[1vh] h-14 w-40 rounded-full border bg-white/30">Shop now</button>
+                </section>
+            </section>
+
+            <section class="lower mx-[20vh]">
+                <h1 class="text-5xl mt-[5vh] text-center -ml-6">Our Best Product</h1>
+                <div class="list flex justify-around mt-[5vh]">
+                    <figure class="product_1">
+                        <div class="img w-[45vh]">
+                            <img src="{% static 'core/image/watch/img_2.png' %}" class="watch_photo">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">Big Bang
+                                Unico Titanium</h1>
+                            <p>$ 20,800.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_2">
+                        <div class="img bg-gray-200 rounded-xl w-[45vh]">
+                            <img src="{% static 'core/image/watch/img_3.png' %}" class="m-auto pt-10 watch_photo">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">Rolex Submariner</h1>
+                            <p>$ 833,500.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_3">
+                        <div class="img w-[45vh]">
+                            <img src="{% static 'core/image/watch/img_7.png' %}" class="watch_photo p-5">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl w-[90%]">Big Bang
+                                Integrated Black Magic</h1>
+                            <p>$ 25,200.00</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <a href="#" class="see_all">See all Watches </a>
+            </section>
+        </section>
+
+        <section class="clothes h-[160vh] relative">
+            <section class="upper_part product_header bg-gray-400">
+                <figure>
+                    <img src="{% static 'core/image/clothes/img_6.png' %}" class="one h-96 absolute -top-[9.2vh] left-[6vw] pointer-events-none select-none">
+                    <img src="{% static 'core/image/clothes/img_5.png' %}" class="two h-96 absolute -top-[8.2vh] left-[70vw] pointer-events-none select-none">
+                    <figcaption class="text-6xl pt-[5vh] pl-[20vw] w-[50%]">Stylish, comfortable, premium, timeless.</figcaption>
+                </figure>
+
+                <section class="content absolute right-[3vw] top-[3vh] w-[30%]">
+                    <button class="shop_now absolute top-44 -left-44 h-14 w-40 rounded-full border bg-white/30">Shop now</button>
+                </section>
+            </section>
+
+            <section class="lower mx-[20vh]">
+                <h1 class="text-5xl mt-[5vh] text-center">New Arrival</h1>
+                <div class="list flex justify-between mt-[5vh]">
+                    <figure class="product_1">
+                        <div class="img w-[45vh] relative">
+                            <img src="{% static 'core/image/clothes/img_7.png' %}" class="first cloth_photo_1">
+                            <img src="{% static 'core/image/clothes/img_8.png' %}" class="second cloth_photo_2">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">Jewel Button Dress </h1>
+                            <p>$ 5,500.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_2 w-[45vh]">
+                        <div class="img relative">
+                            <img src="{% static 'core/image/clothes/img_12.png' %}" class="first cloth_photo_1">
+                            <img src="{% static 'core/image/clothes/img_9.png' %}" class="second cloth_photo_2">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">Double-breasted wool pea coat with branded tag</h1>
+                            <p>$ 2,595.00</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product_3 w-[45vh]">
+                        <div class="img relative">
+                            <img src="{% static 'core/image/clothes/img_10.png' %}" class="first cloth_photo_1">
+                            <img src="{% static 'core/image/clothes/img_11.png' %}" class="second cloth_photo_2">
+                        </div>
+                        <figcaption class="pl-4 mt-4 text-lg">
+                            <h1 class="text-2xl">Single-breasted cashmere coat</h1>
+                            <p>$ 7,345.00</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <a href="#" class="see_all">See all collections </a>
+            </section>
+        </section>
+    </main>
+
+    <footer class="bg-[#005450] h-[35vh] text-white px-[10vh] py-[5vh] relative">
+        <section class="address">
+            <h3>Steven </h3>
+            <p>Haldwani ,Uttarakhand ,India</p>
+            <p>+91 9876XXXXXX</p>
+            <p>bishtrohit627@gmail.com</p>
+            <ul class="links absolute left-[90vh] border-none gap-12 top-10">
+                <li>
+                    <img src="{% static 'core/icon/facebook.png' %}">
+                </li>
+
+                <li>
+                    <img src="{% static 'core/icon/instagram.png' %}">
+                </li>
+
+                <li>
+                    <img src="{% static 'core/icon/pinterest.png' %}">
+                </li>
+
+                <li>
+                    <img src="{% static 'core/icon/x.png' %}">
+                </li>
+            </ul>
+        </section>
+        <hr class="my-10">
+        <p>© CASA-SEVEN 2024 - ALL REGISTERED</p>
+    </footer>
+    {% load static %}
+    <script src="{% static 'core/js/core.js' %}"></script>
+</body>
+
+</html>

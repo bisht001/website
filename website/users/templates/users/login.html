@@ -8,17 +8,17 @@
     {% load static %}
 </head>
 <body>
-    <main class="login_page main">
+    <main class="login_page login_and_signup_main">
         <form class="login_form bg-[#005450] h-[75vh] w-[55vh] rounded-xl text-center" method="POST" action="{% url 'login_func' %}">  {% csrf_token %}
-            <section class="upper heading">
+            <section class="upper login_and_signup_heading">
                 <p>login</p>
             </section>
 
             <section class="mid">
                 <div class="mid_upper flex flex-col w-[42vh] text-xl m-auto ">
-                    <input type="text" placeholder="Username" class="input_bar" name="username">
-                    <input type="password" placeholder="Password" class="input_bar" name="password">
-                    <button type="submit" class="btn w-[280px]">log in</button>
+                    <input type="text" placeholder="Username" class="login_and_signup_input_bar" name="username">
+                    <input type="password" placeholder="Password" class="login_and_signup_input_bar" name="password">
+                    <button type="submit" class="login_and_signup_btn w-[280px]">log in</button>
                 </div>
 
                 <section>
@@ -33,11 +33,11 @@
                 </div>
 
                 <div class="mid_lower">
-                    <a href="#" class="links w-[280px] mt-10">
+                    <a href="#" class="login_and_signup_links w-[280px] mt-10">
                         <img src="{% static 'users/logo/apple.svg' %}" class="h-7 mr-4">Sign in with Apple
                     </a>
 
-                    <a href="#" class="links w-[280px]">
+                    <a href="#" class="login_and_signup_links w-[280px]">
                         <img src="{% static 'users/logo/google.svg' %}" class="h-7 mr-4">Sign in with Google
                     </a>
                 </div>

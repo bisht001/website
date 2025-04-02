@@ -33,7 +33,7 @@ module.exports = {
         /* JS 1: Ignore any JavaScript in node_modules folder. */
         // '!../../**/node_modules',
         /* JS 2: Process all JavaScript files in the project. */
-        // '../../**/*.js',
+        '../../**/*.js',
 
         /**
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
@@ -42,7 +42,27 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            height: {
+                'screen-minus-80': 'calc(100vh - 80px)',
+            },
+            display: {
+                'none': 'none',
+                'block': 'block',
+            },
+            zIndex: {
+                '2': '2',
+            },
+            animation: {
+                'contentSeen': 'contentSeen 2s ease-in-out 1 forwards',
+            },
+            keyframes: {
+                contentSeen: {
+                    '0%': { clipPath: 'circle(0% at 50% 50%)' },
+                    '100%': { clipPath: 'circle(100% at 50% 50%)' },
+                }
+            }
+        }
     },
     plugins: [
         /**
