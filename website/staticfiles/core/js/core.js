@@ -124,10 +124,27 @@ function animation() {
 
     return autoPlay;
 }
+<<<<<<< HEAD
+=======
+
+function wishlist(){
+    let wishlist_button = document.getElementById("add_to_wishlist");
+    let style_color = wishlist_button.querySelector("style");
+
+    wishlist_button.onclick = () =>{
+        style_color.style.fill = "red";
+    }
+}
+
+>>>>>>> branch
 document.addEventListener("DOMContentLoaded", () => {
     navbar_logic();
     product_logic();
     search_logic();
     cross_logic();
     animation();
+<<<<<<< HEAD
+=======
+    wishlist();
+>>>>>>> branch
 })

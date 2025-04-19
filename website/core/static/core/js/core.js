@@ -107,15 +107,26 @@ function Animate() {
 
     autoPlay = setInterval(() => {
         active = active + 1 >= item_count ? 0 : active + 1;
+<<<<<<< HEAD
         let prev = active - 1 < 0 ? item_count-1 : active - 1;
 
         let old_active = document.querySelector('.active')
         if(old_active) {
+=======
+        let prev = active - 1 < 0 ? item_count - 1 : active - 1;
+
+        let old_active = document.querySelector('.active')
+        if (old_active) {
+>>>>>>> branch
             old_active.classList.remove('active');
         }
 
         let old_prev = document.querySelector('.prev')
+<<<<<<< HEAD
         if(old_prev) old_prev.classList.remove('prev');
+=======
+        if (old_prev) old_prev.classList.remove('prev');
+>>>>>>> branch
 
         items[active].classList.add('active');
         items[prev].classList.add('prev');
@@ -125,10 +136,34 @@ function Animate() {
     return autoPlay;
 }
 
+<<<<<<< HEAD
+=======
+function wishlist() {
+    let wishlist_button = document.getElementsByClassName("add_to_wishlist");
+
+    Array.from(wishlist_button).forEach((btn) => {
+        btn.addEventListener("click",function(e){
+            e.preventDefault();
+            let path = btn.querySelector("path");
+            const current_color = path.getAttribute("fill");
+            if (current_color === "gray") {
+                path.setAttribute("fill", "none");
+            } else {
+                path.setAttribute("fill", "gray");
+            }
+        });
+    });
+}
+
+>>>>>>> branch
 document.addEventListener("DOMContentLoaded", () => {
     navbar_logic();
     product_logic();
     search_logic();
     cross_logic();
     // Animate();
+<<<<<<< HEAD
+=======
+    wishlist();
+>>>>>>> branch
 })

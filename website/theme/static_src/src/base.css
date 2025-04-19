@@ -80,6 +80,7 @@
     }
 
     .cloth_photo_1{
+<<<<<<< HEAD
         @apply bg-gray-200 rounded-xl cursor-pointer object-cover h-[65vh] hover:opacity-0 transition-opacity duration-300;
     }
 
@@ -89,6 +90,17 @@
 
     .watch_photo{
         @apply bg-gray-200 rounded-xl cursor-pointer w-full h-[75vh] object-cover;
+=======
+        @apply bg-gray-200 rounded-xl cursor-pointer object-contain h-[59vh] hover:opacity-0 transition-opacity duration-300 w-[45vh];
+    }
+
+    .cloth_photo_2{
+        @apply bg-gray-200 rounded-xl cursor-pointer object-contain h-[59vh] absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-300 w-[45vh];
+    }
+
+    .watch_photo{
+        @apply bg-gray-200 rounded-xl cursor-pointer w-full h-[75vh] object-contain;
+>>>>>>> branch
     }
 
 
